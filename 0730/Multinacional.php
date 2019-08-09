@@ -1,6 +1,6 @@
 <?php
 
-class Multinacional extends Cliente{
+class Multinacional extends Cliente implements Liquidable,Imprimible{
     protected $RazonSocial;
     protected $Cuit;
     protected $Origen;
@@ -35,6 +35,15 @@ class Multinacional extends Cliente{
     public function getOrigen(){
         return $this->origen;
     }
+
+    public function liquidarHaberes($persona,$monto){
+        
+    }
+
+    public function mostrar(){
+        return $this->getRZ();
+    }
+
 
 }
 

@@ -5,8 +5,16 @@ class Classic extends cuenta{
     
     protected $debitar;
 
+    public function setDebitar($debitar){
+        $this->debitar = $debitar;
+    }
+
+    public function getDebitar(){
+        return $this->debitar;
+    }
+
     public function debitar($monto,$codCajero){
-        switch ($codCajero) {
+        switch ($this->Balance) {
             case 'Banelco':
                 $this->Balance=($monto*1.05);
             break;
@@ -18,14 +26,5 @@ class Classic extends cuenta{
             break;
         }
     }
-    
-    public function acreditar($monto){
-        $this->Balance=$monto;
-        $this->setFechaUltimoMovimientos(date());
-    
-    
-    }
-
-
 
 }

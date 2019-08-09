@@ -1,10 +1,9 @@
 <?php
 
-class pyme extends Cliente {
+class pyme extends Cliente implements Liquidable,Imprimible{
     protected $razonSocial;
     protected $cuit;
     protected $origen;
-
 
     //Creo una función constructora con sus parámetros necesarios
 
@@ -36,6 +35,15 @@ class pyme extends Cliente {
     public function getOrigen(){
         return $this->origen;
     }
+
+    public function liquidarHaberes($persona,$monto){
+        
+    }
+    
+    public function mostrar(){
+        return $this->getRZ();
+    }
+    
 }
 
 ?>

@@ -5,12 +5,14 @@
 abstract Class Cliente{
   protected $email;
   protected $pass;
+  protected $cuenta;
 
 //Creo una función constructora con sus parámetros necesarios
 
-  public function __construct($email,$pass){
+  public function __construct($email,$pass,$cuenta){
     $this->email = $email;
     $this->pass = $pass;
+    $this->cuenta = $cuenta;
   }
 
   //Creo funciones públicas para setear el valor pasado como parámetro al ejecutar la función constructora, como valor de la propiedad del objeto instanciado
@@ -27,5 +29,13 @@ abstract Class Cliente{
   public function getPass(){
     return $this->pass;
   }
+  public function setCuenta($cuenta){
+    $this->cuenta = $cuenta;
+  }
+  public function getCuenta(){
+    return $this->cuenta;
+  }
+      
+  public abstract function pagarServicios($tipoCta);
 
 }

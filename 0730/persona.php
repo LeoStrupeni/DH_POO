@@ -1,6 +1,6 @@
 <?php
 
-class persona extends Cliente {
+class persona extends Cliente implements Imprimible {
     protected $nombre;
     protected $apellido;
     protected $documento;
@@ -41,5 +41,6 @@ class persona extends Cliente {
     public function getNacimiento(){
         return $this->nacimiento;
     }
+
 }
 ?>
